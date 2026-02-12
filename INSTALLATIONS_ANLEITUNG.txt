@@ -1,0 +1,150 @@
+═══════════════════════════════════════════════════════════
+✅ KATEGORIE-EINSTELLUNGEN - INSTALLATION
+═══════════════════════════════════════════════════════════
+
+## 📦 DATEIEN HERUNTERLADEN
+
+Du hast diese 3 Dateien von mir bekommen:
+
+1. install_category_settings.bat
+2. update_backend.py
+3. update_frontend.py
+
+═══════════════════════════════════════════════════════════
+🚀 INSTALLATION (3 SCHRITTE)
+═══════════════════════════════════════════════════════════
+
+SCHRITT 1: Dateien nach C:\Kassenbons\ kopieren
+────────────────────────────────────────────────
+
+Kopiere ALLE 3 heruntergeladenen Dateien nach:
+  C:\Kassenbons\
+
+
+SCHRITT 2: Installation ausführen
+──────────────────────────────────
+
+Doppelklick auf:
+  C:\Kassenbons\install_category_settings.bat
+
+ODER manuell im Terminal:
+  cd C:\Kassenbons
+  python update_backend.py
+  python update_frontend.py
+
+
+SCHRITT 3: Server starten & testen
+───────────────────────────────────
+
+  python web_app.py
+
+Browser öffnen: http://localhost:5000
+Klick auf "⚙️ Einstellungen"
+
+═══════════════════════════════════════════════════════════
+📋 WAS WIRD GEÄNDERT?
+═══════════════════════════════════════════════════════════
+
+update_backend.py modifiziert:
+
+  ✅ receipt_analyzer.py
+     → Fügt classify_item() Methode hinzu
+
+  ✅ web_app.py
+     → Fügt 3 API-Endpunkte hinzu:
+       • GET  /api/categories
+       • POST /api/categories
+       • POST /api/categories/reclassify
+
+update_frontend.py modifiziert:
+
+  ✅ templates/index.html
+     → Fügt Settings-Button hinzu
+     → Fügt Settings-Modal hinzu
+     → Fügt CSS Styles hinzu
+     → Fügt JavaScript hinzu
+
+═══════════════════════════════════════════════════════════
+🎯 VERWENDUNG
+═══════════════════════════════════════════════════════════
+
+Nach der Installation:
+
+1. Klick auf "⚙️ Einstellungen"
+
+2. NEUE KATEGORIE ERSTELLEN:
+   • "➕ Neue Kategorie" → Namen eingeben
+   • Keywords hinzufügen (Enter nach jedem)
+   • "💾 Speichern"
+
+3. KEYWORDS BEARBEITEN:
+   • In Textbox klicken
+   • Keyword eingeben + Enter
+   • Zum Löschen: ✕ klicken
+
+4. NEU-KLASSIFIZIERUNG:
+   • Nach Änderungen: "🔄 Alle neu klassifizieren"
+   • Alle Artikel werden mit neuen Regeln klassifiziert
+
+═══════════════════════════════════════════════════════════
+💡 BEISPIEL
+═══════════════════════════════════════════════════════════
+
+Kategorie "Snacks" erstellen:
+
+1. "⚙️ Einstellungen" öffnen
+2. "➕ Neue Kategorie" → "Snacks"
+3. Keywords hinzufügen:
+   - chips (Enter)
+   - schoko (Enter)
+   - keks (Enter)
+   - nüsse (Enter)
+4. "💾 Speichern"
+5. "🔄 Alle neu klassifizieren"
+
+Fertig! Alle Chips, Schoko, etc. sind jetzt in "Snacks".
+
+═══════════════════════════════════════════════════════════
+🆘 TROUBLESHOOTING
+═══════════════════════════════════════════════════════════
+
+Problem: "python not found"
+→ Verwende: python3 update_backend.py
+
+Problem: Settings-Button erscheint nicht
+→ Browser-Cache löschen (Strg+F5)
+→ Server neu starten
+
+Problem: Kategorien können nicht geladen werden
+→ Prüfe kassenbon_analyzer.log
+→ Prüfe Browser-Konsole (F12)
+
+Problem: Skript startet nicht
+→ Rechtsklick → "Als Administrator ausführen"
+
+═══════════════════════════════════════════════════════════
+🔒 BACKUP
+═══════════════════════════════════════════════════════════
+
+AUTOMATISCH:
+  • categories.json.backup wird bei jedem Speichern erstellt
+
+EMPFOHLEN (vor Installation):
+  backup_erstellen.bat ausführen
+
+Bei Problemen:
+  backup_wiederherstellen.bat ausführen
+
+═══════════════════════════════════════════════════════════
+✅ FERTIG!
+═══════════════════════════════════════════════════════════
+
+Du hast jetzt:
+✅ Kategorie-Editor im UI
+✅ Live-Bearbeitung von Keywords
+✅ Automatisches Backup
+✅ Neu-Klassifizierung auf Knopfdruck
+
+Das ist Feature #1 der Top 3! 🏆
+
+Viel Erfolg! 🚀

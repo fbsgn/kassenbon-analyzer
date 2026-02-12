@@ -1,0 +1,180 @@
+╔══════════════════════════════════════════════════════════════════╗
+║                                                                  ║
+║         GITHUB EXPORT - SCHRITT-FÜR-SCHRITT ANLEITUNG          ║
+║                                                                  ║
+╚══════════════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════════════
+  📋 VORBEREITUNG (LOKAL)
+═══════════════════════════════════════════════════════════════════
+
+☐ SCHRITT 1: Cleanup ausführen
+   
+   Windows:
+   > cleanup_github.bat
+   
+   → Löscht alle unnötigen Debug-/Test-Dateien
+
+☐ SCHRITT 2: Persönliche Daten prüfen
+   
+   WICHTIG: Diese Ordner/Dateien NICHT hochladen:
+   
+   ✗ Ablage/              → Deine PDFs
+   ✗ Backups/             → Deine Backups
+   ✗ Fehler/              → Fehlerhafte PDFs
+   ✗ PDF/                 → Import-Ordner
+   ✗ uploads/             → Temp-Uploads
+   ✗ receipts.db          → Deine Datenbank
+   ✗ kassenbon_analyzer.log → Deine Logs
+   ✗ categories.json      → Deine Einstellungen
+   
+   → .gitignore verhindert das automatisch!
+
+☐ SCHRITT 3: README umbenennen
+   
+   > ren README.md README_ALT.md
+   > ren README_GITHUB.md README.md
+   
+   → README_GITHUB.md wird zur Haupt-README
+
+☐ SCHRITT 4: LICENSE anpassen
+   
+   Öffne LICENSE Datei und ersetze:
+   [DEIN NAME] → Dein echter Name oder Pseudonym
+
+☐ SCHRITT 5: Git initialisieren (falls noch nicht geschehen)
+   
+   > cd C:\Kassenbons
+   > git init
+   > git add .
+   > git commit -m "Initial commit - Kassenbon Analyzer v2.0"
+
+═══════════════════════════════════════════════════════════════════
+  🌐 GITHUB REPOSITORY ERSTELLEN
+═══════════════════════════════════════════════════════════════════
+
+☐ SCHRITT 6: GitHub Repository erstellen
+   
+   1. Gehe zu https://github.com/new
+   2. Repository Name: kassenbon-analyzer
+   3. Beschreibung: 
+      "🧾 Intelligente PDF-Kassenbon-Analyse mit automatischer 
+       Kategorisierung und Preisverlaufs-Tracking"
+   4. Visibility: 
+      • Public (jeder kann sehen)
+      • Private (nur du kannst sehen)
+   5. NICHT anhaken:
+      ☐ Add a README file
+      ☐ Add .gitignore
+      ☐ Choose a license
+      → Wir haben das alles schon!
+   6. Klick "Create repository"
+
+☐ SCHRITT 7: Repository verbinden
+   
+   GitHub zeigt dir jetzt Commands wie:
+   
+   > git remote add origin https://github.com/DEIN-USERNAME/kassenbon-analyzer.git
+   > git branch -M main
+   > git push -u origin main
+   
+   Kopiere und führe diese aus!
+
+═══════════════════════════════════════════════════════════════════
+  🚀 HOCHLADEN
+═══════════════════════════════════════════════════════════════════
+
+☐ SCHRITT 8: Erste Upload
+   
+   > git push -u origin main
+   
+   Eventuell musst du dich anmelden:
+   - Username: Dein GitHub Username
+   - Password: Personal Access Token (NICHT dein Passwort!)
+   
+   Token erstellen:
+   1. GitHub → Settings → Developer settings
+   2. Personal access tokens → Tokens (classic)
+   3. Generate new token
+   4. Scopes: ✓ repo
+   5. Token kopieren und als Password nutzen
+
+☐ SCHRITT 9: Prüfen
+   
+   Gehe zu:
+   https://github.com/DEIN-USERNAME/kassenbon-analyzer
+   
+   Solltest sehen:
+   ✓ README.md wird angezeigt
+   ✓ Alle Python-Dateien vorhanden
+   ✓ templates/ und static/ Ordner vorhanden
+   ✓ kassenbon_analyzer_offline_full/ vorhanden
+   ✓ KEINE persönlichen Daten (Ablage/, receipts.db, etc.)
+
+═══════════════════════════════════════════════════════════════════
+  📝 REPOSITORY VERSCHÖNERN (OPTIONAL)
+═══════════════════════════════════════════════════════════════════
+
+☐ SCHRITT 10: Topics hinzufügen
+   
+   Auf der Repository-Seite:
+   1. Klick auf ⚙️ neben "About"
+   2. Topics hinzufügen:
+      python, flask, pdf, receipt, analyzer, tracking, 
+      budgeting, finance, categorization, ocr
+   3. Save changes
+
+☐ SCHRITT 11: Release erstellen
+   
+   1. GitHub → Releases → "Create a new release"
+   2. Tag: v2.0.0
+   3. Title: "Kassenbon Analyzer v2.0 - Initial Release"
+   4. Description:
+      
+      🎉 Erste öffentliche Version!
+      
+      Features:
+      - PDF-Upload & automatisches Parsing
+      - Intelligente Kategorisierung
+      - Preisverlaufs-Tracking
+      - Excel/CSV Export
+      - Offline-Paket mit Auto-Backup
+      - PWA-Support
+      
+   5. Publish release
+
+☐ SCHRITT 12: GitHub Pages (für Dokumentation)
+   
+   Optional: Erstelle eine docs/ Seite mit GitHub Pages
+   1. Settings → Pages
+   2. Source: Deploy from a branch
+   3. Branch: main, Folder: /docs
+   4. Save
+
+═══════════════════════════════════════════════════════════════════
+  🔄 ZUKÜNFTIGE UPDATES
+═══════════════════════════════════════════════════════════════════
+
+Wenn du Änderungen machst:
+
+1. Änderungen machen
+2. Testen
+3. Commiten:
+   > git add .
+   > git commit -m "Beschreibung der Änderung"
+4. Hochladen:
+   > git push
+
+═══════════════════════════════════════════════════════════════════
+  ✅ FERTIG!
+═══════════════════════════════════════════════════════════════════
+
+Dein Projekt ist jetzt auf GitHub! 🎉
+
+Nächste Schritte:
+• Teile den Link mit anderen
+• Warte auf Issues & Pull Requests
+• Füge ein Screenshot/GIF zur README hinzu
+• Erstelle eine CONTRIBUTING.md
+
+═══════════════════════════════════════════════════════════════════

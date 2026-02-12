@@ -1,0 +1,80 @@
+# ═══════════════════════════════════════════════════════════
+# KASSENBON-ANALYZER - GITIGNORE
+# ═══════════════════════════════════════════════════════════
+
+# ─── PERSÖNLICHE DATEN (NIEMALS HOCHLADEN!) ───
+Ablage/
+Backups/
+Fehler/
+PDF/
+uploads/
+receipts.db
+receipts.db-shm
+receipts.db-wal
+kassenbon_analyzer.log
+categories.json
+
+# ─── PYTHON ───
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ─── VIRTUAL ENVIRONMENTS ───
+venv/
+ENV/
+env/
+.venv
+
+# ─── IDE ───
+.vscode/
+.vs/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ─── WINDOWS ───
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ─── LOGS ───
+*.log
+logs/
+*.bak
+*.tmp
+
+# ─── BACKUPS (alte Versionen) ───
+*.old
+*.backup
+*_backup.*
+
+# ─── TEMPORÄRE DATEIEN ───
+*.temp
+temp/
+tmp/
+
+# ─── ANDERE ───
+.env
+.env.local
+*.secret

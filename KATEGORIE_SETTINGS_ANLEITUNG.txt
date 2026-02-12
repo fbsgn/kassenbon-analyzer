@@ -1,0 +1,92 @@
+═══════════════════════════════════════════════════════════
+✅ KATEGORIE-EINSTELLUNGEN - JETZT INSTALLIEREN!
+═══════════════════════════════════════════════════════════
+
+## 🎉 ALLE DATEIEN AUF C:\Kassenbons\ GESCHRIEBEN!
+
+Ich habe diese Dateien erstellt:
+
+1. ✅ install_category_settings.bat
+2. ✅ update_backend.py
+3. ✅ update_frontend.py
+
+═══════════════════════════════════════════════════════════
+🚀 INSTALLATION (NUR 1 SCHRITT!)
+═══════════════════════════════════════════════════════════
+
+Doppelklick auf:
+  C:\Kassenbons\install_category_settings.bat
+
+Fertig! 🎉
+
+═══════════════════════════════════════════════════════════
+📋 WAS PASSIERT?
+═══════════════════════════════════════════════════════════
+
+Das Skript fügt automatisch hinzu:
+
+✅ receipt_analyzer.py:
+   • classify_item() Methode
+
+✅ web_app.py:
+   • GET  /api/categories
+   • POST /api/categories
+   • POST /api/categories/reclassify
+
+✅ templates/index.html:
+   • ⚙️ Einstellungen Button
+   • Settings-Modal
+   • CSS + JavaScript
+
+═══════════════════════════════════════════════════════════
+🎯 NACH DER INSTALLATION
+═══════════════════════════════════════════════════════════
+
+1. Server starten:
+   python web_app.py
+
+2. Browser öffnen:
+   http://localhost:5000
+
+3. Klick auf "⚙️ Einstellungen"
+
+4. Kategorien bearbeiten:
+   • Keywords hinzufügen/entfernen
+   • Neue Kategorien erstellen
+   • Speichern
+   • Neu klassifizieren
+
+═══════════════════════════════════════════════════════════
+💡 BEISPIEL
+═══════════════════════════════════════════════════════════
+
+Neue Kategorie "Snacks":
+
+1. "➕ Neue Kategorie" → "Snacks"
+2. Keywords: chips, schoko, keks
+3. "💾 Speichern"
+4. "🔄 Alle neu klassifizieren"
+
+═══════════════════════════════════════════════════════════
+🆘 HILFE
+═══════════════════════════════════════════════════════════
+
+Problem: Skript startet nicht
+→ Rechtsklick → "Als Administrator ausführen"
+
+Problem: Python nicht gefunden
+→ Öffne Terminal:
+  cd C:\Kassenbons
+  python update_backend.py
+  python update_frontend.py
+
+Problem: Settings-Button erscheint nicht
+→ Browser-Cache löschen (Strg+F5)
+
+═══════════════════════════════════════════════════════════
+✅ READY!
+═══════════════════════════════════════════════════════════
+
+Einfach install_category_settings.bat ausführen!
+
+Viel Erfolg! 🚀

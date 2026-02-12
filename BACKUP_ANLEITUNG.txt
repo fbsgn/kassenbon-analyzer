@@ -1,0 +1,226 @@
+═══════════════════════════════════════════════════════════
+🎯 KASSENBON-ANALYZER - BACKUP & SICHERUNG
+═══════════════════════════════════════════════════════════
+
+## 📦 BACKUP ERSTELLEN
+
+### Automatisch (empfohlen):
+```
+Doppelklick auf: backup_erstellen.bat
+```
+
+Das Skript erstellt automatisch:
+- Ordner: `Backups\backup_DATUM_UHRZEIT\`
+- Sichert: Alle wichtigen Dateien
+- Erstellt: README.txt im Backup
+
+### Manuell:
+1. Ordner erstellen: `Backups\backup_DATUM\`
+2. Folgende Dateien kopieren:
+   - web_app.py
+   - web_app_v2.py
+   - migrate_db.py
+   - receipts.db
+   - batch_import.py
+   - receipt_analyzer.py
+   - categories.json
+   - templates\index.html
+   - VERBESSERUNGEN_V2.md
+
+═══════════════════════════════════════════════════════════
+🔄 BACKUP WIEDERHERSTELLEN
+═══════════════════════════════════════════════════════════
+
+### Automatisch (empfohlen):
+```
+Doppelklick auf: backup_wiederherstellen.bat
+```
+
+Das Skript:
+1. Zeigt alle verfügbaren Backups
+2. Fragt welches wiederhergestellt werden soll
+3. Warnt vor Überschreiben
+4. Kopiert Dateien zurück
+
+### Manuell:
+1. Server stoppen (Strg+C)
+2. Gewünschte Dateien aus `Backups\backup_XXX\` nach `C:\Kassenbons\` kopieren
+3. Server neu starten
+
+═══════════════════════════════════════════════════════════
+📁 BACKUP-STRUKTUR
+═══════════════════════════════════════════════════════════
+
+C:\Kassenbons\
+├── Backups\
+│   ├── backup_20260208_105754\    ← Beispiel-Backup
+│   │   ├── web_app.py
+│   │   ├── web_app_v2.py
+│   │   ├── migrate_db.py
+│   │   ├── receipts.db
+│   │   ├── templates\
+│   │   │   └── index.html
+│   │   └── README.txt
+│   ├── backup_20260209_143022\    ← Weiteres Backup
+│   └── ...
+├── backup_erstellen.bat           ← Backup-Skript
+└── backup_wiederherstellen.bat    ← Wiederherstellungs-Skript
+
+═══════════════════════════════════════════════════════════
+💾 WAS WIRD GESICHERT?
+═══════════════════════════════════════════════════════════
+
+✅ DATEN:
+   • receipts.db - Komplette Datenbank (Kassenbons, Artikel, Preise)
+
+✅ CODE:
+   • web_app.py - Stabile Version mit PDF-Modal-Fix
+   • web_app_v2.py - Neue Version mit Verbesserungen
+   • migrate_db.py - Migrations-Skript
+   • batch_import.py - Batch-Import
+   • receipt_analyzer.py - PDF-Parser
+
+✅ KONFIGURATION:
+   • categories.json - Kategorie-Definitionen
+
+✅ FRONTEND:
+   • templates\index.html - UI mit PDF-Modal-Fix
+
+✅ DOKUMENTATION:
+   • VERBESSERUNGEN_V2.md - Verbesserungen V2
+
+❌ NICHT GESICHERT:
+   • Ablage\ - PDF-Dateien (zu groß, separat sichern!)
+   • PDF\ - Eingangsordner
+   • Fehler\ - Fehler-PDFs
+   • uploads\ - Temporäre Uploads
+   • __pycache__\ - Python-Cache
+
+═══════════════════════════════════════════════════════════
+⚙️ AUTOMATISCHES BACKUP (Optional)
+═══════════════════════════════════════════════════════════
+
+Windows Aufgabenplanung einrichten:
+
+1. Aufgabenplanung öffnen (taskschd.msc)
+2. "Einfache Aufgabe erstellen"
+3. Name: "Kassenbon-Analyzer Backup"
+4. Trigger: Täglich / Wöchentlich
+5. Aktion: "Programm starten"
+6. Programm: C:\Kassenbons\backup_erstellen.bat
+7. Fertig!
+
+═══════════════════════════════════════════════════════════
+🔐 ABLAGE-ORDNER SICHERN (Empfohlen)
+═══════════════════════════════════════════════════════════
+
+Der Ablage-Ordner enthält alle PDF-Dateien und sollte
+SEPARAT gesichert werden (kann sehr groß werden!).
+
+### Manuell sichern:
+```
+Rechtsklick auf: C:\Kassenbons\Ablage\
+→ Kopieren
+→ Einfügen in: D:\Backups\Kassenbons_Ablage_DATUM\
+```
+
+### Cloud-Backup (empfohlen):
+- Google Drive Backup & Sync
+- OneDrive
+- Dropbox
+- Externes USB-Laufwerk
+
+═══════════════════════════════════════════════════════════
+🆘 NOTFALL-WIEDERHERSTELLUNG
+═══════════════════════════════════════════════════════════
+
+Wenn ALLES kaputt ist:
+
+1. Neuestes Backup finden:
+   ```
+   C:\Kassenbons\Backups\backup_NEUESTE\
+   ```
+
+2. Server stoppen (Strg+C)
+
+3. Alle Dateien überschreiben:
+   ```
+   copy Backups\backup_NEUESTE\*.* .
+   copy Backups\backup_NEUESTE\templates\*.* templates\
+   ```
+
+4. Server neu starten:
+   ```
+   python web_app.py
+   ```
+
+5. Wenn auch das nicht hilft:
+   - Backup von receipts.db separat aufbewahren
+   - Komplette Neuinstallation
+   - receipts.db zurückkopieren
+
+═══════════════════════════════════════════════════════════
+✅ BACKUP-CHECKLISTE
+═══════════════════════════════════════════════════════════
+
+Regelmäßig (z.B. wöchentlich):
+□ backup_erstellen.bat ausführen
+□ Backup auf externem Laufwerk sichern
+□ Ablage-Ordner separat sichern
+
+Vor wichtigen Änderungen:
+□ Backup erstellen
+□ Testen ob Wiederherstellung funktioniert
+
+Nach erfolgreichen Updates:
+□ Backup erstellen
+□ Altes Backup behalten (für Rollback)
+
+═══════════════════════════════════════════════════════════
+💡 BEST PRACTICES
+═══════════════════════════════════════════════════════════
+
+✅ 3-2-1 Regel:
+   - 3 Kopien deiner Daten
+   - 2 verschiedene Speichermedien
+   - 1 Kopie extern/Cloud
+
+✅ Backup BEVOR du:
+   - Große Änderungen machst
+   - System updates durchführst
+   - Mit V2 Migration startest
+
+✅ Teste Wiederherstellung:
+   - Einmal pro Monat testen
+   - Sicherstellen dass Backups funktionieren
+
+✅ Alte Backups aufräumen:
+   - Behalte letzte 3-5 Backups
+   - Lösche sehr alte Backups
+
+═══════════════════════════════════════════════════════════
+📞 SCHNELLHILFE
+═══════════════════════════════════════════════════════════
+
+Problem: Backup-Skript funktioniert nicht
+→ Manuell Ordner & Dateien kopieren
+
+Problem: Kein Platz für Backups
+→ Alte Backups löschen, Ablage separat sichern
+
+Problem: Backup beschädigt
+→ Älteres Backup verwenden
+
+Problem: Nur Datenbank wiederherstellen
+→ Nur receipts.db aus Backup kopieren
+
+═══════════════════════════════════════════════════════════
+✅ FERTIG!
+═══════════════════════════════════════════════════════════
+
+Deine Daten sind jetzt sicher!
+
+Skripte:
+✅ backup_erstellen.bat - Backup erstellen
+✅ backup_wiederherstellen.bat - Backup wiederherstellen
+✅ BACKUP_ANLEITUNG.txt - Diese Anleitung

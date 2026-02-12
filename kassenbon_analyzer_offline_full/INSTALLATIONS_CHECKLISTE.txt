@@ -1,0 +1,132 @@
+╔══════════════════════════════════════════════════════════════════╗
+║                                                                  ║
+║    OFFLINE-PAKET VOLLVERSION - INSTALLATIONS-CHECKLISTE         ║
+║                                                                  ║
+╚══════════════════════════════════════════════════════════════════╝
+
+CHECKLISTE FÜR EINE ERFOLGREICHE INSTALLATION:
+
+┌──────────────────────────────────────────────────────────────┐
+│ SCHRITT 1: Python Installation prüfen                       │
+└──────────────────────────────────────────────────────────────┘
+
+  Windows:
+    □ python --version
+      → Sollte zeigen: Python 3.8.x oder höher
+    
+    Falls nicht installiert:
+    □ Download: https://www.python.org/downloads/
+    □ Bei Installation UNBEDINGT anhaken: "Add Python to PATH"
+  
+  Linux/macOS:
+    □ python3 --version
+      → Sollte zeigen: Python 3.8.x oder höher
+    
+    Falls nicht installiert:
+    □ Ubuntu/Debian: sudo apt install python3 python3-pip
+    □ macOS: brew install python3
+
+┌──────────────────────────────────────────────────────────────┐
+│ SCHRITT 2: Offline-Paket Installation                       │
+└──────────────────────────────────────────────────────────────┘
+
+  Windows:
+    □ Navigiere zum Ordner: kassenbon_analyzer_offline_full
+    □ Doppelklick auf: INSTALL.bat
+    □ Warte bis Installation abgeschlossen
+    □ Optional: Chart.js Download bestätigen (j/n)
+  
+  Linux/macOS:
+    □ Terminal öffnen
+    □ cd kassenbon_analyzer_offline_full
+    □ chmod +x install.sh start.sh
+    □ ./install.sh
+    □ Optional: Chart.js Download bestätigen (j/n)
+
+┌──────────────────────────────────────────────────────────────┐
+│ SCHRITT 3: Erste Start-Test                                 │
+└──────────────────────────────────────────────────────────────┘
+
+  Windows:
+    □ Doppelklick auf: START.bat
+    □ Backup-Meldung sollte erscheinen
+    □ "Starte Server..." sollte erscheinen
+    □ Browser sollte automatisch öffnen
+  
+  Linux/macOS:
+    □ ./start.sh
+    □ Backup-Meldung sollte erscheinen
+    □ "Starte Server..." sollte erscheinen
+    □ Öffne Browser: http://127.0.0.1:5000
+
+┌──────────────────────────────────────────────────────────────┐
+│ SCHRITT 4: Funktionstest                                    │
+└──────────────────────────────────────────────────────────────┘
+
+  □ App lädt im Browser
+  □ Dashboard zeigt "0 €" (bei erster Nutzung)
+  □ PDF hochladen funktioniert
+  □ Einstellungen öffnen funktioniert
+  □ Kategorien werden angezeigt
+
+┌──────────────────────────────────────────────────────────────┐
+│ OPTIONAL: Chart.js nachinstallieren                         │
+└──────────────────────────────────────────────────────────────┘
+
+  Falls bei Installation übersprungen:
+  
+  Windows:
+    □ python download_chartjs.py
+  
+  Linux/macOS:
+    □ python3 download_chartjs.py
+  
+  Test:
+    □ Klicke auf einen Artikel mit mehreren Käufen
+    □ Klicke auf das 📈 Icon
+    □ Preisverlaufs-Diagramm sollte erscheinen
+
+┌──────────────────────────────────────────────────────────────┐
+│ BACKUP-SYSTEM TESTEN                                        │
+└──────────────────────────────────────────────────────────────┘
+
+  □ Lade einen PDF-Kassenbon hoch
+  □ Schließe die App
+  □ Starte die App neu mit START.bat
+  □ Prüfe ob Backup erstellt wurde:
+    - Ordner backups/ sollte ZIP-Datei enthalten
+  □ Prüfe ob Kassenbon noch da ist
+
+┌──────────────────────────────────────────────────────────────┐
+│ ✅ INSTALLATION ERFOLGREICH!                                │
+└──────────────────────────────────────────────────────────────┘
+
+Wenn alle Checkboxen abgehakt sind:
+  → Installation erfolgreich!
+  → Du kannst die App jetzt nutzen
+
+Bei Problemen:
+  → Siehe README_START_HIER.txt Sektion "PROBLEMLÖSUNG"
+  → Oder README_OFFLINE.md
+
+═══════════════════════════════════════════════════════════════
+
+NÄCHSTE SCHRITTE:
+
+1. Kategorien anpassen:
+   → Einstellungen (⚙️) → Keywords hinzufügen
+
+2. PDFs hochladen:
+   → Drag & Drop oder "PDF hier ablegen"
+
+3. Daten analysieren:
+   → Dashboard zeigt Ausgaben nach Kategorie
+
+4. Backups verwalten:
+   → python backup_restore.py list
+
+═══════════════════════════════════════════════════════════════
+
+           Viel Erfolg mit dem Kassenbon-Analyzer! 🎉
+
+═══════════════════════════════════════════════════════════════
