@@ -38,14 +38,14 @@ REWE • EDEKA • Lidl • Aldi • dm • Müller • Kaufland • Penny • N
 
 **Windows:**
 ```cmd
-git clone https://github.com/DEIN-USERNAME/kassenbon-analyzer.git
+git clone https://github.com/fbsgn/kassenbon-analyzer.git
 cd kassenbon-analyzer
 install.bat
 ```
 
 **Linux/macOS:**
 ```bash
-git clone https://github.com/DEIN-USERNAME/kassenbon-analyzer.git
+git clone https://github.com/fbsgn/kassenbon-analyzer.git
 cd kassenbon-analyzer
 chmod +x install.sh
 ./install.sh
@@ -261,7 +261,7 @@ Dieses Projekt ist lizenziert unter der MIT-Lizenz - siehe [LICENSE](LICENSE) f�
 
 ## 📧 Kontakt
 
-Bei Fragen oder Problemen öffne bitte ein [Issue](https://github.com/DEIN-USERNAME/kassenbon-analyzer/issues).
+Bei Fragen oder Problemen öffne bitte ein [Issue](https://github.com/fbsgn/kassenbon-analyzer/issues).
 
 ---
 

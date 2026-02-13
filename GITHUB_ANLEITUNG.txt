@@ -74,7 +74,7 @@
    
    GitHub zeigt dir jetzt Commands wie:
    
-   > git remote add origin https://github.com/DEIN-USERNAME/kassenbon-analyzer.git
+   > git remote add origin https://github.com/fbsgn/kassenbon-analyzer.git
    > git branch -M main
    > git push -u origin main
    
@@ -102,7 +102,7 @@
 ☐ SCHRITT 9: Prüfen
    
    Gehe zu:
-   https://github.com/DEIN-USERNAME/kassenbon-analyzer
+   https://github.com/fbsgn/kassenbon-analyzer
    
    Solltest sehen:
    ✓ README.md wird angezeigt
